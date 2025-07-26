@@ -2,9 +2,9 @@
 
 ## Demo Video
 
-**Video Link**: [INSERT YOUR PUBLIC VIDEO LINK HERE]
+**Video Link**: [https://youtu.be/AFXJGFu2G2c?si=hwF_QdCNGxp9j37j]
 
-**Duration**: 3:30 minutes
+**Duration**: 6:04
 
 ## Demo Overview
 
@@ -282,4 +282,5 @@ Pitch Deck Generation
 
 ---
 
-**Note**: Replace `[INSERT YOUR PUBLIC VIDEO LINK HERE]` with your actual demo video URL once available. 
+**Note**: Replace `[https://youtu.be/AFXJGFu2G2c?si=rQ5bfaSsbFBx1F8E]` with your actual demo video URL once available. 
+
