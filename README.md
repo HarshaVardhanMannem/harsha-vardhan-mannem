@@ -1,30 +1,25 @@
 # Startup Strategist Agent
 
-A comprehensive AI-powered startup strategist that transforms business ideas into investor-ready pitch decks through systematic analysis and market research.
+A comprehensive AI-powered startup strategist that transforms raw business ideas into investor-ready pitch decks using an 8-agent sequential pipeline built on Google ADK and Gemini 2.0 Flash.
 
-## Overview
+## 🚀 Features
 
-The Startup Strategist Agent is built using Google's Agent Development Kit (ADK) and leverages Gemini 2.0 Flash for intelligent analysis. It provides a structured approach to startup ideation by breaking down the process into 8 specialized agents, each focusing on a specific aspect of startup development.
+- **8-Agent Sequential Pipeline**: Specialized agents for each aspect of startup development
+- **Real-Time Market Research**: Google Search integration for current market data
+- **Comprehensive Analysis**: From idea clarification to pitch deck generation
+- **Professional Output**: Investor-ready documentation and presentations
+- **Robust Architecture**: Error handling and quality assurance
 
-## Features
+## 📋 Prerequisites
 
-- **Idea Clarification**: Refines raw business ideas into investor-ready concepts
-- **Problem Analysis**: Identifies and validates market problems
-- **Customer Profiling**: Defines target customer segments
-- **MVP Planning**: Designs minimum viable products
-- **Competitor Analysis**: Researches and analyzes market competition
-- **Monetization Strategy**: Proposes revenue models
-- **Go-to-Market Planning**: Creates customer acquisition strategies
-- **Pitch Deck Generation**: Compiles comprehensive investor presentations
+- Python 3.11+
+- Google ADK installed and configured
+- Google API key with access to:
+  - Gemini 2.0 Flash
+  - Google Search API
+- Stable internet connection
 
-## Prerequisites
-
-- Python 3.11 or higher
-- Google Cloud Project with ADK enabled
-- Google API credentials
-- Internet connection for market research
-
-## Installation
+## 🛠️ Installation
 
 1. **Clone the repository**:
    ```bash
@@ -32,13 +27,10 @@ The Startup Strategist Agent is built using Google's Agent Development Kit (ADK)
    cd adk-project
    ```
 
-2. **Create and activate virtual environment**:
+2. **Set up virtual environment**:
    ```bash
    python -m venv adkenv
-   # On Windows:
-   adkenv\Scripts\activate
-   # On macOS/Linux:
-   source adkenv/bin/activate
+   source adkenv/bin/activate  # On Windows: adkenv\Scripts\activate
    ```
 
 3. **Install dependencies**:
@@ -46,108 +38,162 @@ The Startup Strategist Agent is built using Google's Agent Development Kit (ADK)
    pip install google-adk python-dotenv
    ```
 
-4. **Set up environment variables**:
-   Create a `.env` file in the root directory:
-   ```
+4. **Configure environment variables**:
+   Create a `.env` file in the `harsha-vardhan-mannem/src/startup_strategist` directory:
+   ```env
    GOOGLE_API_KEY=your_google_api_key_here
-   GOOGLE_CLOUD_PROJECT=your_project_id
    ```
 
-## Usage
+## 🎯 Running with ADK Web Interface
 
-### Option 1: ADK Web Interface
-1. Navigate to the `startup_strategist` directory
-2. Deploy using ADK web interface
-3. Input your business idea
-4. Receive comprehensive startup analysis
+### Method 1: ADK Web Interface (Recommended)
 
-### Option 2: Command Line Interface
-1. Navigate to the `startup_strategist` directory
-2. Run the CLI version:
+1. **Navigate to your project directory**:
    ```bash
-   python agent.py
+   cd harsha-vardhan-mannem/src
    ```
-3. Follow the interactive prompts
 
-### Option 3: Direct Python Execution
-```python
-from startup_strategist.agent import agent
+2. **Start the ADK web interface**:
+   ```bash
+   adk web
+   ```
 
-# Run the agent with your idea
-result = await agent.run_async({
-    "idea": "Your business idea here"
-})
+3. **Access the web interface**:
+   - Open your browser and go to `http://localhost:8080`
+   - You'll see the ADK web interface with available agents
+
+4. **Select the Startup Strategist Agent**:
+   - Look for the agent named "startup_strategist"
+   - Click on it to open the agent interface
+
+5. **Run your startup idea**:
+   - Enter your business idea in the input field
+   - Click "Run" to start the analysis
+   - Watch as the 8-agent pipeline processes your idea
+
+
+3. **Enter your business idea when prompted**
+
+## 📁 Project Structure
+
+```
+adk-project/
+├── adkenv/                          # Virtual environment
+├── harsha-vardhan-mannem/           # Main project directory
+│   ├── src/                         # Source code directory
+│   │   └── startup_strategist/      # Agent implementation
+│   │       ├── agent.py             # Main agent file
+│   │       └── .env                 # Environment variables
+│   ├── README.md                    # Project documentation
+│   ├── ARCHITECTURE.md              # System architecture
+│   ├── EXPLANATION.md               # Technical explanation
+│   └── DEMO.md                      # Demo documentation
+└── README.md                        # Root README
 ```
 
-## Agent Architecture
+## 🏗️ Agent Architecture
 
-The system consists of 8 specialized agents working sequentially:
+The system uses 8 specialized agents in sequence:
 
-1. **Clarify Idea Agent**: Refines raw ideas
-2. **Problem Statement Agent**: Defines market problems
-3. **Target Customer Agent**: Identifies customer segments
+1. **Clarify Idea Agent**: Refines raw ideas into clear concepts
+2. **Problem Statement Agent**: Identifies real-world problems
+3. **Target Customer Agent**: Defines ideal user personas
 4. **MVP Planner Agent**: Designs minimum viable products
-5. **Competitor Analysis Agent**: Researches competition
-6. **Monetization Agent**: Proposes revenue models
-7. **Go-to-Market Agent**: Plans customer acquisition
-8. **Pitch Deck Agent**: Compiles final presentation
+5. **Competitor Analysis Agent**: Researches market competition
+6. **Monetization Agent**: Develops revenue strategies
+7. **Go-to-Market Agent**: Creates customer acquisition plans
+8. **Pitch Deck Agent**: Generates investor presentations
 
-## Dependencies
+## 📊 Example Usage
 
-- `google-adk`: Google's Agent Development Kit
-- `python-dotenv`: Environment variable management
-- `google-search`: Web search capabilities
-- `gemini-2.0-flash`: AI model for analysis
+### Input Example:
+```
+"I want to build an AI-powered meal planning app"
+```
 
-## Configuration
+### Output Includes:
+- **Refined Business Concept**: Clear, investor-ready description
+- **Problem Analysis**: Market problems and significance
+- **Target Customer Profile**: Demographics and behavior
+- **MVP Strategy**: 4-6 week development plan
+- **Competitor Analysis**: Top competitors and differentiation
+- **Revenue Model**: 2-3 monetization strategies
+- **Go-to-Market Plan**: First 100 customer acquisition
+- **Pitch Deck**: Complete investor presentation
+
+## 🔧 Configuration
 
 ### Environment Variables
-- `GOOGLE_API_KEY`: Your Google API key
-- `GOOGLE_CLOUD_PROJECT`: Your Google Cloud project ID
+- `GOOGLE_API_KEY`: Your Google API key for Gemini and Search
+- `ADK_PROJECT_ID`: Your Google Cloud project ID (optional)
 
-### Model Configuration
-- Default model: `gemini-2.0-flash`
-- Tools: Google Search for market research
-- Output format: Structured JSON responses
+### Agent Customization
+You can modify agent instructions in `harsha-vardhan-mannem/src/startup_strategist/agent.py`:
+- Adjust agent prompts for different industries
+- Add new tools for enhanced capabilities
+- Modify output formats for specific needs
 
-## Troubleshooting
+## 🚨 Troubleshooting
 
-### Common Issues
+### Common Issues:
 
-1. **API Key Errors**: Ensure your Google API key is valid and has ADK permissions
-2. **Import Errors**: Verify all dependencies are installed in your virtual environment
-3. **Search Tool Failures**: Check internet connectivity and API quotas
+1. **ADK Web Interface Not Starting**:
+   ```bash
+   # Check if ADK is properly installed
+   adk --version
+   
+   # Reinstall if needed
+   pip install --upgrade google-adk
+   ```
 
-### Debug Mode
-Enable debug logging by setting:
-```python
-import logging
-logging.basicConfig(level=logging.DEBUG)
-```
+2. **API Key Errors**:
+   - Verify your Google API key is valid
+   - Ensure the key has access to Gemini and Search APIs
+   - Check that the `.env` file is in the correct location: `harsha-vardhan-mannem/src/startup_strategist/.env`
 
-## Contributing
+3. **Import Errors**:
+   ```bash
+   # Reinstall dependencies
+   pip install -r requirements.txt
+   ```
 
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Test thoroughly
-5. Submit a pull request
+4. **Network Issues**:
+   - Ensure stable internet connection
+   - Check firewall settings
+   - Verify Google API quotas
 
-## License
+5. **Wrong Directory Issues**:
+   - Make sure you're in the correct directory: `harsha-vardhan-mannem/src/`
+   - Verify the agent file exists: `startup_strategist/agent.py`
+   - Make sure the name of the SequentialAgent is startup_strategist same as your folder name and also make sure the variable name is root_agent 
+
+## 📈 Performance Tips
+
+- **Use specific ideas**: More detailed inputs yield better results
+- **Stable internet**: Required for real-time market research
+- **Monitor API usage**: Track your Google API quota usage
+- **Cache results**: The system remembers previous analyses
+
+## 📚 Documentation
+
+- **README.md**: This file - setup and usage instructions
+- **ARCHITECTURE.md**: Detailed system architecture and design
+- **EXPLANATION.md**: Technical explanation of agent behavior
+- **DEMO.md**: Demo video guide and script
+
+
+## 📄 License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-## Support
+## 🆘 Support
 
 For issues and questions:
-- Check the troubleshooting section
-- Review the architecture documentation
+- Check the troubleshooting section above
+- Review the ARCHITECTURE.md for technical details
+- Consult the EXPLANATION.md for system behavior
 - Open an issue on GitHub
 
-## Roadmap
+---
 
-- [ ] Add more market research tools
-- [ ] Implement financial modeling
-- [ ] Add pitch deck template customization
-- [ ] Integrate with CRM systems
-- [ ] Add team collaboration features 
+ 

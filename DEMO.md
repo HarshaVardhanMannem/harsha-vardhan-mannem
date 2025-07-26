@@ -190,11 +190,6 @@ root_agent = SequentialAgent(
 - Streamlined output generation
 - Minimal API calls through intelligent caching
 
-### 🛡️ **Robust Error Handling**
-- Graceful failure recovery
-- Fallback mechanisms for API failures
-- User-friendly error messages
-- System reliability under various conditions
 
 ## Technical Demonstrations
 
@@ -215,7 +210,7 @@ Pitch Deck Generation
 - Context passing between agents via output keys
 - Structured outputs for consistent parsing
 - Progressive information building
-- Session-based conversation memory
+- Session-based conversation memory (Memory Agent saves information) [02:28]
 
 ## Expected Outcomes
 
